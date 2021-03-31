@@ -1,0 +1,28 @@
+@startuml
+package "BusinessApp" {
+[Socket] -> [Worker]
+[Worker] --> [Socket]
+}
+tcp - [Socket]
+
+package "Servlet" {
+[Worker] -> [BinServlet]
+[BinServlet] --> [Worker]
+
+[BinServlet] -> [FilterChainProcessor]
+[FilterChainProcessor] --> [BinServlet]
+
+[FilterChainProcessor] -> [DispatcherServlet]
+[DispatcherServlet] --> [FilterChainProcessor]
+
+[DispatcherServlet] -> [HandlerChain]
+[HandlerChain] --> [DispatcherServlet]
+
+[DispatcherServlet] -> [HandlerAdapter]
+[HandlerAdapter] -> [DispatcherServlet]
+
+[DispatcherServlet] -> [ExceptionResolver]
+[ExceptionResolver] --> [DispatcherServlet]
+
+}
+@enduml
