@@ -5,10 +5,18 @@ import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
 
+/**
+ *  A annotation that is itself annotated with {@link Component @Component}
+ *  <br>
+ *  <p>
+ *  Types that carry this annotation are treated as controllers where
+ *  {@link BinRequestMapping @BinRequestMapping} methods assume are handlers
+ *
+ */
+@Component
+@Documented
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Component
 public @interface BinController {
 
     /**
@@ -19,3 +27,4 @@ public @interface BinController {
     @AliasFor(annotation = Component.class)
     String value() default "";
 }
+

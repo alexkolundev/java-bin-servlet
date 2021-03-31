@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import static com.dev.kolun.alex.binservlet.util.TimeUtil.endTime;
 import static com.dev.kolun.alex.binservlet.util.TimeUtil.startTime;
 
-
 @Slf4j
 @Service
 public class BinServletProcessor implements BinServlet {

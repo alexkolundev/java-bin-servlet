@@ -24,12 +24,21 @@ import static com.dev.kolun.alex.binservlet.util.TimeUtil.startTime;
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;
 
+/**
+ * Service for controllers invocation
+ * <p>
+ * At the stage {@link PostConstruct } it registers all beans {@link BinController controller}
+ * ins with methods {@link BinRequestMapping method}
+ * <br>
+ * <p>
+ * Invoke bean method for end point {@link Request#getPath()} and passes request and response
+ */
 @Slf4j
 @Service
 public class BinServletHandleAdapter implements HandleAdapter {
 
-    private ApplicationContext applicationContext;
-    private Map<String, BeanMethod> requestMapping = new HashMap<>();
+    private final ApplicationContext applicationContext;
+    private final Map<String, BeanMethod> requestMapping = new HashMap<>();
 
     @Autowired
     public BinServletHandleAdapter(ApplicationContext applicationContext) {
@@ -96,7 +105,6 @@ public class BinServletHandleAdapter implements HandleAdapter {
         Method[] methods = handler.getMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(BinRequestMapping.class)) {
-                //Class<?>[] parameterTypes = method.getParameterTypes();
                 Class<?> returnType = method.getReturnType();
                 if (checkReturnType(returnType)) {
                     candidates.add(method);
@@ -109,21 +117,6 @@ public class BinServletHandleAdapter implements HandleAdapter {
     private boolean checkReturnType(Class<?> returnType) {
         return returnType.equals(Void.TYPE);
     }
-
-    private boolean checkParameterTypes(Class<?>[] parameterTypes) {
-        Boolean hasRequest = null;
-        Boolean hasResponse = null;
-        for (Class<?> parameterType : parameterTypes) {
-            if (parameterType == Request.class) {
-                hasRequest = true;
-            }
-            if (parameterType == Response.class) {
-                hasResponse = true;
-            }
-        }
-        return nonNull(hasRequest) && nonNull(hasResponse);
-    }
-
 
     private boolean isCandidateBean(String beanName) {
         Class<?> beanType = null;
