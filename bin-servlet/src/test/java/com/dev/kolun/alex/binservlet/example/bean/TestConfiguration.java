@@ -1,4 +1,4 @@
-package com.dev.kolun.alex.binservlet.bean;
+package com.dev.kolun.alex.binservlet.example.bean;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -1,9 +1,9 @@
-package com.dev.kolun.alex.binservlet.bean.controller;
+package com.dev.kolun.alex.binservlet.example.bean.controller;
 
 import com.dev.kolun.alex.binservlet.annotation.BinController;
 import com.dev.kolun.alex.binservlet.annotation.BinRequestMapping;
-import com.dev.kolun.alex.binservlet.protocol.OperationWrapRequest;
-import com.dev.kolun.alex.binservlet.protocol.OperationWrapResponse;
+import com.dev.kolun.alex.binservlet.example.protocol.OperationWrapRequest;
+import com.dev.kolun.alex.binservlet.example.protocol.OperationWrapResponse;
 
 @BinController
 public class OperationController {

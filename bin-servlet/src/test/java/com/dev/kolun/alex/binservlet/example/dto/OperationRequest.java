@@ -1,4 +1,4 @@
-package com.dev.kolun.alex.binservlet.dto;
+package com.dev.kolun.alex.binservlet.example.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

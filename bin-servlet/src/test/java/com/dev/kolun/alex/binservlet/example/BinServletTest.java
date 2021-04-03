@@ -1,11 +1,11 @@
-package com.dev.kolun.alex.binservlet;
+package com.dev.kolun.alex.binservlet.example;
 
-import com.dev.kolun.alex.binservlet.bean.TestConfiguration;
+import com.dev.kolun.alex.binservlet.example.bean.TestConfiguration;
 import com.dev.kolun.alex.binservlet.dispatcher.BinServlet;
-import com.dev.kolun.alex.binservlet.dto.OperationRequest;
-import com.dev.kolun.alex.binservlet.dto.OperationResponse;
-import com.dev.kolun.alex.binservlet.protocol.OperationWrapRequest;
-import com.dev.kolun.alex.binservlet.protocol.OperationWrapResponse;
+import com.dev.kolun.alex.binservlet.example.dto.OperationRequest;
+import com.dev.kolun.alex.binservlet.example.dto.OperationResponse;
+import com.dev.kolun.alex.binservlet.example.protocol.OperationWrapRequest;
+import com.dev.kolun.alex.binservlet.example.protocol.OperationWrapResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -17,6 +17,7 @@ import org.springframework.util.ClassUtils;
 import javax.annotation.PostConstruct;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.*;
 
 import static com.dev.kolun.alex.binservlet.util.TimeUtil.endTime;
@@ -104,7 +105,7 @@ public class BinServletHandleAdapter implements HandleAdapter {
         Set<Method> candidates = new HashSet<>();
         Method[] methods = handler.getMethods();
         for (Method method : methods) {
-            if (method.isAnnotationPresent(BinRequestMapping.class)) {
+            if (method.isAnnotationPresent(BinRequestMapping.class) && !method.isDefault() && !Modifier.isStatic(method.getModifiers())) {
                 Class<?> returnType = method.getReturnType();
                 if (checkReturnType(returnType)) {
                     candidates.add(method);

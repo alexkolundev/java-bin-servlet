@@ -1,7 +1,7 @@
-package com.dev.kolun.alex.binservlet.protocol;
+package com.dev.kolun.alex.binservlet.example.protocol;
 
 import com.dev.kolun.alex.binservlet.Response;
-import com.dev.kolun.alex.binservlet.dto.OperationResponse;
+import com.dev.kolun.alex.binservlet.example.dto.OperationResponse;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
