@@ -2,7 +2,7 @@
 **BinServlet** - is an abstraction layer used for unifying processing pipeline.
 The [BinServletDiagram.puml](https://github.com/alexkolundev/java-bin-servlet/blob/master/bin-servlet/BinServletDiagram.puml) 
 diagram can be viewed with the PlantUML plugin installed.
-**BinServlet** is a simplified model of the **spring-web** (?) (FrameworkServlet, DispatcherServlet, HandlerExecutionChain, HandlerExceptionResolver)
+**BinServlet** is a simplified model of the **spring-web** framework (FrameworkServlet, DispatcherServlet, HandlerExecutionChain, HandlerExceptionResolver)
 
 ### Cases:
 1. Formalization of the request handling pipeline for a binary protocols
