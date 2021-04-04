@@ -1,7 +1,7 @@
 package com.dev.kolun.alex.binservlet.example.protocol;
 
 import com.dev.kolun.alex.binservlet.Request;
-import com.dev.kolun.alex.binservlet.example.dto.OperationRequest;
+import com.dev.kolun.alex.binservlet.example.protocol.dto.OperationRequest;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -19,7 +19,6 @@ public class OperationWrapRequest implements Request<OperationRequest> {
     public String getPath() {
         return "operation/" + request.getType();
     }
-
 
 
 }

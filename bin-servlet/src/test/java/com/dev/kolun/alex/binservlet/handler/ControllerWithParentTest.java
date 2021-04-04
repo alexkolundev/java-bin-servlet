@@ -13,8 +13,7 @@ import java.util.stream.Collectors;
 public class ControllerWithParentTest {
 
     @Test
-    @DisplayName("Test abstract/method1 method")
-    public void abstractMethod1() {
+    public void pathAbstractMethod1() {
         ControllerWithParent controllerWithParent = new ControllerWithParent();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithParent);
         servletHandleAdapter.registerControllers();
@@ -33,8 +32,7 @@ public class ControllerWithParentTest {
     }
 
     @Test
-    @DisplayName("Test abstract/method2 method")
-    public void abstractMethod2() {
+    public void pathAbstractMethod2() {
         ControllerWithParent controllerWithParent = new ControllerWithParent();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithParent);
         servletHandleAdapter.registerControllers();
@@ -47,8 +45,7 @@ public class ControllerWithParentTest {
     }
 
     @Test
-    @DisplayName("Test abstract/method3 method")
-    public void abstractMethod3() {
+    public void pathAbstractMethod3() {
         ControllerWithParent controllerWithParent = new ControllerWithParent();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithParent);
         servletHandleAdapter.registerControllers();
@@ -67,8 +64,7 @@ public class ControllerWithParentTest {
     }
 
     @Test
-    @DisplayName("Test abstract/method4 method")
-    public void abstractMethod4() {
+    public void pathAbstractMethod4() {
         ControllerWithParent controllerWithParent = new ControllerWithParent();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithParent);
         servletHandleAdapter.registerControllers();
@@ -81,8 +77,7 @@ public class ControllerWithParentTest {
     }
 
     @Test
-    @DisplayName("Test abstract/method5 method")
-    public void abstractMethod5() {
+    public void pathAbstractMethod5() {
         ControllerWithParent controllerWithParent = new ControllerWithParent();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithParent);
         servletHandleAdapter.registerControllers();

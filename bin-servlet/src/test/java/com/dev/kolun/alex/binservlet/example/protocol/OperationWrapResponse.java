@@ -1,9 +1,10 @@
 package com.dev.kolun.alex.binservlet.example.protocol;
 
 import com.dev.kolun.alex.binservlet.Response;
-import com.dev.kolun.alex.binservlet.example.dto.OperationResponse;
+import com.dev.kolun.alex.binservlet.example.protocol.dto.HasResponseData;
+import com.dev.kolun.alex.binservlet.example.protocol.dto.OperationResponse;
+import com.dev.kolun.alex.binservlet.example.protocol.dto.ResponseData;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -11,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ToString
-@NoArgsConstructor
-public class OperationWrapResponse implements Response<OperationResponse> {
+public class OperationWrapResponse implements Response<OperationResponse>, HasResponseData {
 
     @Setter
     @Getter
@@ -20,12 +20,22 @@ public class OperationWrapResponse implements Response<OperationResponse> {
 
     @Setter
     @Getter
-    private boolean committed = false;
+    private boolean committed;
 
     private final List<String> attributes = new ArrayList<>();
 
     public OperationWrapResponse(OperationResponse response) {
         this.response = response;
+    }
+
+    @Override
+    public void setResponseData(ResponseData responseData) {
+        response.setResponseData(responseData);
+    }
+
+    @Override
+    public ResponseData getResponseData() {
+        return response.getResponseData();
     }
 
     public void addAttribute(String attribute) {
@@ -35,5 +45,4 @@ public class OperationWrapResponse implements Response<OperationResponse> {
     public String getAttribute(int index) {
         return attributes.get(index);
     }
-
 }

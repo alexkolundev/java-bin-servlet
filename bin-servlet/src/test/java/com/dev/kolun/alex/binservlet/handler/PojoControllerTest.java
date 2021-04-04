@@ -13,8 +13,7 @@ import java.util.stream.Collectors;
 public class PojoControllerTest {
 
     @Test
-    @DisplayName("Test pojo/method1 method")
-    public void pojoMethod1() {
+    public void pathPojoMethod1() {
         PojoController pojoController = new PojoController();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(pojoController);
         servletHandleAdapter.registerControllers();
@@ -33,8 +32,7 @@ public class PojoControllerTest {
     }
 
     @Test
-    @DisplayName("Test pojo/method2 method")
-    public void pojoMethod2() {
+    public void pathPojoMethod2() {
         PojoController pojoController = new PojoController();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(pojoController);
         servletHandleAdapter.registerControllers();
@@ -47,8 +45,7 @@ public class PojoControllerTest {
     }
 
     @Test
-    @DisplayName("Test pojo/method3 static method")
-    public void pojoMethod3() {
+    public void pathPojoMethod3() {
         PojoController pojoController = new PojoController();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(pojoController);
         servletHandleAdapter.registerControllers();

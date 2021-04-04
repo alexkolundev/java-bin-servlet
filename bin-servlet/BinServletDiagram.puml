@@ -5,7 +5,7 @@ package "BusinessApp" {
 }
 tcp - [Socket]
 
-package "Servlet" {
+package "BinServlet" {
 [Worker] -> [BinServlet]
 [BinServlet] --> [Worker]
 

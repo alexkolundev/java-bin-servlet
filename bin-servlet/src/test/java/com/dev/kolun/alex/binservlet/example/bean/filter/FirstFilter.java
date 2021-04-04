@@ -15,10 +15,16 @@ public class FirstFilter implements Filter {
     @Override
     public void doFilter(Request<?> request, Response<?> response, FilterChain chain) {
         try {
-            ((OperationWrapResponse) response).addAttribute("FirstFilter");
+            addAttribute(response, "FirstFilter");
             chain.doFilter(request, response);
         } finally {
-            ((OperationWrapResponse) response).addAttribute("FirstFilter finally");
+            addAttribute(response, "FirstFilter finally");
+        }
+    }
+
+    private void addAttribute(Response<?> response, String attribute) {
+        if (response instanceof OperationWrapResponse) {
+            ((OperationWrapResponse) response).addAttribute(attribute);
         }
     }
 }

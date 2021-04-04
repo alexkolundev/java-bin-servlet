@@ -15,11 +15,16 @@ public class SecondFilter implements Filter {
     @Override
     public void doFilter(Request<?> request, Response<?> response, FilterChain chain) {
         try {
-            ((OperationWrapResponse) response).addAttribute("SecondFilter");
+            addAttribute(response, "SecondFilter");
             chain.doFilter(request, response);
         } finally {
-            ((OperationWrapResponse) response).addAttribute("SecondFilter finally");
+            addAttribute(response, "SecondFilter finally");
         }
+    }
 
+    private void addAttribute(Response<?> response, String attribute) {
+        if (response instanceof OperationWrapResponse) {
+            ((OperationWrapResponse) response).addAttribute(attribute);
+        }
     }
 }

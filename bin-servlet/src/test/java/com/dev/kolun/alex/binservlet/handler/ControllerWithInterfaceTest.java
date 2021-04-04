@@ -13,8 +13,7 @@ import java.util.stream.Collectors;
 public class ControllerWithInterfaceTest {
 
     @Test
-    @DisplayName("Test interface/method1 method")
-    public void interfaceMethod1() {
+    public void pathInterfaceMethod1() {
         ControllerWithInterface controllerWithInterface = new ControllerWithInterface();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithInterface);
         servletHandleAdapter.registerControllers();
@@ -33,8 +32,7 @@ public class ControllerWithInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test interface/method2 method")
-    public void interfaceMethod2() {
+    public void pathInterfaceMethod2() {
         ControllerWithInterface controllerWithInterface = new ControllerWithInterface();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithInterface);
         servletHandleAdapter.registerControllers();
@@ -47,8 +45,7 @@ public class ControllerWithInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test interface/method3 method")
-    public void interfaceMethod3() {
+    public void pathInterfaceMethod3() {
         ControllerWithInterface controllerWithInterface = new ControllerWithInterface();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithInterface);
         servletHandleAdapter.registerControllers();
@@ -61,8 +58,7 @@ public class ControllerWithInterfaceTest {
     }
 
     @Test
-    @DisplayName("Test interface/method4 method")
-    public void interfaceMethod4() {
+    public void pathInterfaceMethod4() {
         ControllerWithInterface controllerWithInterface = new ControllerWithInterface();
         BinServletHandleAdapter servletHandleAdapter = ContextHelper.getServletHandleAdapter(controllerWithInterface);
         servletHandleAdapter.registerControllers();

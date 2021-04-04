@@ -29,7 +29,7 @@ import static java.util.Objects.nonNull;
  * Service for controllers invocation
  * <p>
  * At the stage {@link PostConstruct } it registers all beans {@link BinController controller}
- * ins with methods {@link BinRequestMapping method}
+ * with methods {@link BinRequestMapping method}
  * <br>
  * <p>
  * Invoke bean method for end point {@link Request#getPath()} and passes request and response
@@ -73,7 +73,12 @@ public class BinServletHandleAdapter implements HandleAdapter {
         } catch (IllegalAccessException e) {
             throw new BinServletException(String.format("Invocation access exception for method: beanMethod=[%s]", beanMethod), e);
         } catch (InvocationTargetException e) {
-            throw new BinServletException(String.format("Invocation target exception for method: beanMethod=[%s]", beanMethod), e);
+            log.debug("Invocation target exception for method: beanMethod=[{}]", beanMethod);
+            if (e.getTargetException() instanceof RuntimeException) {
+                throw (RuntimeException) e.getTargetException();
+            } else {
+                throw new BinServletException(e.getTargetException());
+            }
         }
         log.debug("invoke <- path=[{}], request=[{}], response=[{}], timeMs=[{}]", path, request, response, endTime(start));
     }
