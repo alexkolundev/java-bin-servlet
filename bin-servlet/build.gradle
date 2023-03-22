@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.dev.kolun.alex'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '17'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
@@ -25,11 +25,12 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter:2.4.4',
-            'org.projectlombok:lombok:1.18.16'
-    annotationProcessor 'org.projectlombok:lombok:1.18.16'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.4.4'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+    def springBootVersion = '3.0.4'
+    implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    implementation 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 }
 
 test {

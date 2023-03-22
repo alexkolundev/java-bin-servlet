@@ -6,6 +6,7 @@ import com.dev.kolun.alex.binservlet.annotation.BinController;
 import com.dev.kolun.alex.binservlet.annotation.BinRequestMapping;
 import com.dev.kolun.alex.binservlet.exception.BinServletException;
 import com.dev.kolun.alex.binservlet.handler.dto.BeanMethod;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,6 @@ import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ClassUtils;
 
-import javax.annotation.PostConstruct;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
