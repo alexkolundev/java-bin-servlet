@@ -5,6 +5,7 @@ import com.dev.kolun.alex.binservlet.Response;
 import com.dev.kolun.alex.binservlet.annotation.BinController;
 import com.dev.kolun.alex.binservlet.annotation.BinRequestMapping;
 import com.dev.kolun.alex.binservlet.exception.BinServletException;
+import com.dev.kolun.alex.binservlet.exception.UnknownHandlerException;
 import com.dev.kolun.alex.binservlet.handler.dto.BeanMethod;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -65,7 +66,7 @@ public class BinServletHandleAdapter implements HandleAdapter {
         long start = startTime();
         BeanMethod beanMethod = requestMapping.get(path);
         if (isNull(beanMethod)) {
-            throw new BinServletException(String.format("Handler not found for path: path=[%s]", path));
+            throw new UnknownHandlerException(String.format("Handler not found for path: path=[%s]", path));
         }
         Method method = beanMethod.getMethod();
         try {
