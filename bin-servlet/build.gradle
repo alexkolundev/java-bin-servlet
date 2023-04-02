@@ -50,3 +50,7 @@ publishing {
         mavenLocal()
     }
 }
+
+publishToMavenLocal {
+    dependsOn test
+}
